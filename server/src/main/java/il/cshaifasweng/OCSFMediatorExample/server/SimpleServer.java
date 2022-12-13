@@ -6,6 +6,7 @@ import il.cshaifasweng.OCSFMediatorExample.server.ocsf.ConnectionToClient;
 import il.cshaifasweng.OCSFMediatorExample.server.ocsf.SubscribedClient;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class SimpleServer extends AbstractServer {
@@ -56,7 +57,7 @@ public class SimpleServer extends AbstractServer {
 				client.sendToClient(message);
 			} else if (request.equals("what day it is?")) {
 				//add code here to send the date to client
-				message.setMessage("8/12/2022");
+				message.setMessage(LocalDate.now().toString());
 				client.sendToClient(message);
 			} else if (request.startsWith("add")) {
 				String str = message.getMessage();
